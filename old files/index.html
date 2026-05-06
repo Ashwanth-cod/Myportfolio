@@ -1,0 +1,401 @@
+<html lang="en"><head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Ashwanth S - Developer and Innovator">
+    <meta name="description" content="Personal website of Ashwanth S, a passionate developer with expertise in web development, game design, Flutter, and AI. Explore projects, achievements, and contact details.">
+    <meta name="keywords" content="Ashwanth S, developer, game developer, web developer, Flutter developer, Python, Django, AI, multi-OS apps, resume, portfolio">
+    <meta name="author" content="Ashwanth S">
+    <meta name="robots" content="index, follow"> <!-- Ensure search engines index and follow -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animation CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        #tagline-navbar {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            z-index: 1000;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 1s width ease;
+        }
+
+        #tagline-navbar:focus {
+            border-color: white; 
+            box-shadow: 10px 10px 100px; 
+         }
+
+        #fullscreen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            z-index: 999;
+        }
+        
+        #fullscreen-menu a {
+            color: white;
+            font-size: 24px;
+            margin: 15px 0;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #2a6de0;
+            color: #fff;
+            padding: 60px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            border: none;
+            transition: background-color 0.4s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #35eaf7;
+        }
+
+        .section-card {
+            margin-bottom: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            max-width: 90%;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255, 87, 34, 0.1), rgba(0, 128, 255, 0.1));
+            transform: rotate(45deg);
+            z-index: -1;
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+
+        .section-card:hover::before {
+            opacity: 1;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .progress {
+            height: 15px;
+            border-radius: 10px;
+            background-color: #e9ecef;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .skill-bar {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: width 2s ease-in-out;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1.5rem 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        form {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff9800;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.8);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff9800;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e68900;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
+
+.result {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+        <!-- Tagline Navbar -->
+        <div id="tagline-navbar">Innovate. Create. Inspire.</div>
+    
+        <!-- Fullscreen Navigation Menu -->
+        <div id="fullscreen-menu">
+            <a class="links" href="/#about">About</a>
+            <a class="links" href="/#certification">Certification</a>
+            <a class="links" href="/#projects">Projects</a>
+            <a class="links" href="/#skills">Skills</a>
+        </div>
+
+    <!-- Header Section -->
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Ashwanth</h1>
+        <p class="lead">Programmer | Full Stack Developer</p>
+        <div>
+            <a href="mailto:ashwanth.ars@gmail.com" class="btn btn-primary">Contact Me</a>
+            <a href="Resume.pdf" download="Resume - Ashwanth S" class="btn btn-primary">Download CV
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <a href="/about.html">
+            <div class="section-card animate__animated animate__fadeInUp animate__delay-0.5s" id="about">
+                <h2 class="section-title">About Me</h2>
+                <p>I am a passionate developer who has been programming since the age of 8. I specialize in game development, app creation, and integrating AI with robotics. Recently, I won the first-place award in the South-2 region of the Design Championship and placed second nationally.</p>
+            </div>
+        </a>
+
+        <!-- Certifications and Awards Section -->
+        <a href="/certifications.html">
+            <div class="section-card animate__animated animate__fadeInUp animate__delay-1s" id="certification">
+                <h2 class="section-title">Certifications and Awards</h2>
+                <div class="certification">
+                    <h5>Design Championship</h5>
+                    <p>First Place (South-2 Region) &amp; Second Place (National), 2024</p>
+                </div>
+                <div class="certification">
+                    <h5>Python Certification</h5>
+                    <p>Issued by [Subhi Technologies, IACT], SEP - DEC 2023</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Projects Section -->
+        <a href="/projects.html">
+            <div class="section-card animate__animated animate__fadeInUp animate__delay-1.5s" id="projects">
+                <h2 class="section-title">Projects</h2>
+                <div class="project">
+                    <h5>Olympics The Fire</h5>
+                    <p>A Website dedicated on the Olympics of Paris 2025 with the best news, a fun quiz and even a hurdle run game.</p>
+                </div>
+                <div class="project">
+                    <h5>Blox Fruits Wiki</h5>
+                    <p>A app built  for game which workd both Android and iOS using Dart's framework - Flutter.</p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Skills Section -->
+        <a href="/skills.html">
+            <div class="section-card animate__animated animate__fadeInUp animate__delay-2s" id="skills">
+                <h2 class="section-title">Skills</h2>
+                <div class="mb-3">
+                    <label>Django</label>
+                    <div class="progress">
+                        <div class="progress-bar skill-bar" role="progressbar" data-width="90" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label>Python</label>
+                    <div class="progress">
+                        <div class="progress-bar skill-bar" role="progressbar" data-width="85" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label>JavaScript</label>
+                    <div class="progress">
+                        <div class="progress-bar skill-bar" role="progressbar" data-width="80" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="section-card animate__animated animate__fadeInUp animate__delay-2.5s">
+        <form name="contactForm" data-netlify="true" data-netlify-recaptcha="true">
+            <p>
+                <label>
+                    <span>Name:</span>
+                    <input name="name" type="text" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span>Email:</span>
+                    <input name="email" type="email" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span>Subject:</span>
+                    <input name="subject" type="text" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span>Message:</span>
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+            </p>
+        
+        
+            <button type="submit">Submit</button>
+        </form>
+        <p class="result"></p>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center animate__animated animate__fadeInUp animate__delay-3s">
+        <p>© 2024 Ashwanth S. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Animate the progress bars based on their data-width
+            document.querySelectorAll(".skill-bar").forEach(bar => {
+                const width = bar.getAttribute("data-width");
+                setTimeout(() => {
+                    bar.style.width = width + "%";
+                }, 1000);
+            });
+        });
+        
+        document.getElementById("tagline-navbar").addEventListener("click", function() {
+            const fullscreenMenu = document.getElementById("fullscreen-menu");
+            const Navbar = document.getElementById("tagline-navbar");
+            // Toggle between showing and hiding the menu
+            fullscreenMenu.style.display = fullscreenMenu.style.display === "flex" ? "none" : "flex";
+            Navbar.style.boxShadow = fullscreenMenu.style.display === "flex" ? "5px 5px 100px white" : "none";
+            
+        });
+        document.querySelectorAll(".links").forEach(link => {
+            link.addEventListener("click", function() {
+                const fullscreenMenu = document.getElementById("fullscreen-menu");
+                fullscreenMenu.style.display = fullscreenMenu.style.display === "flex" ? "none" : "flex";
+            });
+        });
+        
+    </script>
+
+</body></html>
